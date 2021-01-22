@@ -1,0 +1,94 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+#wrapper {
+	padding-top: 10px;
+}
+
+h1 {
+	font-weight: bold;
+	width: 100%;
+	font-size: 1.6em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#thetable {
+	border: 1px solid #000;
+	width: 100%;
+	height: 50px;
+	background-color: #000;
+	/* max-width: 1000px; */
+	align-items: stretch;
+}
+
+#thetable #column,
+#thetable #row {
+	width: 25%;
+	max-width: 80px;
+	height: 70%;
+	position: relative;
+	top: 12%;
+	border-radius: 8px;
+	font-size: 1.2em;
+}
+
+#thetable #select {
+	width: 25%;
+	max-width: 80px;
+	height: 75%;
+	position: relative;
+	top: 12%;
+	border-radius: 8px;
+	font-size: 1em;
+}
+
+button {
+	border: 1px solid #1cdd56;
+	background-color: #1cdd56;
+	width: 85px;
+	height: 75%;
+	position: relative;
+	top: 14%;
+	color: #000;
+	font-size: 1.1em;
+	font-weight: bold;
+	border-radius: 8px;
+}
+
+button:hover {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 0.8em; 
+}
+
+#displayanswer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	min-width: 375px;
+	max-width: 1367px;
+	width: 90%;
+	position: relative;
+	left: 5%;
+}
+
+#displayanswer span {
+	width: 80px;
+	height: auto;
+	text-align: center;
+	/* border: 1px solid #000; */
+}
+
+#displayanswer div {
+	border: 1px solid #000000;
+	width: auto;
+}
+
+#displayanswer div:nth-child(2n) {
+	background-color: #000;
+	color: #fff; */
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculating table</title>
+	<link rel="stylesheet" type="text/css" href="calculatingtable.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="wrapper">
+
+		<h1>My Calculating Table.</h1>
+
+		<div id="thetable">
+			<input type="number" name="" placeholder="column" id="column" value="">
+			<input type="number" name="" placeholder="row" id="row" value="">
+			<select id="select">
+				<option>Select</option>
+				<option value="Multiplication">Multiplication</option>
+				<option value="Addition">Addition</option>
+				<option value="Subtraction">Subtraction</option>
+				<option value="Division">Division</option>
+			</select>
+			<button onclick="showResult()">Calculate</button>
+			<!-- <button>Clear</button> -->	
+		</div>
+	
+		<div id="displayanswer"></div>
+	</div>
+
+<script type="text/javascript">
+	
+	function showResult() {
+	if ((column.value == "") && (row.value == "") && (select.value == "Select")) {
+		alert('Input necessary details');
+	} else if (column.value == "") {
+		alert('Input numbers of column');
+	} else if (row.value == "") {
+		alert('Input numbers of row');
+	} else if (select.value == "Select") {
+		alert('Select the operation');
+	} else {
+		displayanswer.innerHTML = "";
+	
+		var a = column.value;
+		var b = row.value;
+		var c = select.value;
+
+		if (c === "Multiplication") {
+			for (var i = 1; i <=a; i++) {
+				var wrapper = document.createElement("span");
+				for (var j = 1; j <=b; j++) {
+					var span = document.createElement("span");
+					var bd = document.createElement("div");
+
+					var mul = (i+"*"+j+"="+(i*j));
+					var answer = document.createTextNode(mul);
+
+					bd.appendChild(answer);
+					span.appendChild(bd);
+					wrapper.appendChild(span.appendChild(bd));
+					document.querySelector("#displayanswer").appendChild(wrapper);
+				}
+			} 
+		} else if (c === "Addition") {
+			for (var i = 1; i <=a; i++) {
+				var wrapper = document.createElement("span");
+				for (var j = 1; j <=b; j++) {
+					var span = document.createElement("span");
+					var bd = document.createElement("div");
+
+					var add = (i+"+"+j+"="+(i+j));
+					var answer = document.createTextNode(add);
+
+					bd.appendChild(answer);
+					span.appendChild(bd);
+					wrapper.appendChild(span.appendChild(bd));
+					document.querySelector("#displayanswer").appendChild(wrapper);
+				}
+			}
+		} else if (c === "Subtraction") {
+			for (var i = 1; i <=a; i++) {
+				var wrapper = document.createElement("span");
+				for (var j = 1; j <=b; j++) {
+					var span = document.createElement("span");
+					var bd = document.createElement("div");
+
+					var subtn = (i+"-"+j+"="+(i-j));
+					var answer = document.createTextNode(subtn);
+
+					bd.appendChild(answer);
+					span.appendChild(bd);
+					wrapper.appendChild(span.appendChild(bd));
+					document.querySelector("#displayanswer").appendChild(wrapper);
+				}
+			}
+		} else if (c === "Division") {
+			for (var i = 1; i <=a; i++) {
+				var wrapper = document.createElement("span");
+				for (var j = 1; j <=b; j++) {
+					var span = document.createElement("span");
+					var bd = document.createElement("div");
+
+					var div = (i+"/"+j+"="+(i/j).toPrecision(2));
+					var answer = document.createTextNode(div);
+						
+					bd.appendChild(answer);
+					span.appendChild(bd);
+					wrapper.appendChild(span.appendChild(bd));
+					document.querySelector("#displayanswer").appendChild(wrapper);
+				}
+			}				
+		}
+	}
+}
+
+
+</script>
+
+
+</body>
+</html>
